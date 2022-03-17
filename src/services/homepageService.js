@@ -50,7 +50,7 @@ let getButtonMessageTemplate = () => {
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "https://docs.google.com/spreadsheets/d/1xI6gppm13aAPATpbC1AIx6Ahj_cqIQrEHF25uU1Ye6k/edit?usp=sharing",
+                        "url": "https://docs.google.com/spreadsheets/d/1hUdVdGnVWgfunUtv9iMSRA3jgDpio3v6xVxW-KtCNGg/edit?usp=sharing",
                         "title": "View Data 😁"
                     },
                     {
