@@ -203,7 +203,7 @@ let handleSetupInfor = async (req, res) => {
             }
         ],
         "whitelisted_domains": [
-            "https://personal-data-haryphamdev-bot.herokuapp.com", //link to your Heroku app
+            "https://schoolmatters.herokuapp.com/", //link to your Heroku app
         ]
     };
     return new Promise((resolve, reject) => {
