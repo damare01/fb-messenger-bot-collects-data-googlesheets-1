@@ -242,14 +242,13 @@ let handlePostSurvey = async (req, res) => {
     let country = req.body.country;
     let email = req.body.email;
     let phonenumber = req.body.phonenumber;
-    let motherphonenumber = req.body.motherphonenumber;
-    let fatherphonenumber = req.body.fatherphonenumber;
+    let parentphonenumber = req.body.parentphonenumber;
     let note = req.body.note;
     let mother = req.body.mother;
     let father = req.body.father;
     let vaccinationstatus = req.body.vaccinationstatus;
 
-    await writeDataToGoogleSheet(name, country, email, phonenumber, motherphonenumber, fatherphonenumber, note, mother, father, vaccinationstatus);
+    await writeDataToGoogleSheet(name, country, email, phonenumber, parentphonenumber, note, mother, father, vaccinationstatus);
 
     //send a text message
     await callSendAPI(psid, { text: `Done!\nYour information 's recorded!` });
@@ -264,7 +263,7 @@ let handlePostSurvey = async (req, res) => {
     })
 }
 
-let writeDataToGoogleSheet = async (name, country, email, phonenumber, motherphonenumber, fatherphonenumber, note, mother, father, vaccinationstatus) => {
+let writeDataToGoogleSheet = async (name, country, email, phonenumber, parentphonenumber, note, mother, father, vaccinationstatus) => {
     return new Promise(async (resolve, reject) => {
         try {
             // Initialize the sheet - doc ID is the long id in the sheets URL
@@ -290,9 +289,8 @@ let writeDataToGoogleSheet = async (name, country, email, phonenumber, motherpho
                     'Email': email,
                     'Phone Number': phonenumber,
                     'Name of Mother': mother,
-                    'Phone Number': motherphonenumber,
                     'Name of Father': father,
-                    'Phone Number': fatherphonenumber,
+                    'Parent Phone Number': parentphonenumber,
                     'Vaccination Status': vaccinationstatus,
                     'Message': note
                 }
