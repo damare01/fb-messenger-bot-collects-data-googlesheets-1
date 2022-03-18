@@ -11,7 +11,7 @@ let initWebRoutes = (app) => {
     router.post('/setup', homepageController.handleSetupInfor); //set up the persistent menu & get started button
     router.get('/get-survey', homepageController.handleGetSurveyPage); //webview
     router.post('/post-survey', homepageController.handlePostSurvey);
-    router.post('/write-data', homepageController.writeDataToGoogleSheet);
+    //router.post('/write-data', homepageController.writeDataToGoogleSheet);
     return app.use("/", router);
 };
 
