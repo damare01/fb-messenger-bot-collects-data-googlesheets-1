@@ -196,7 +196,7 @@ let handleSetupInfor = async (req, res) => {
                     },
                     {
                         "type": "postback",
-                        "title": "Restart the converstaion",
+                        "title": "Restart the conversation",
                         "payload": "RESTART_CONVERSATION"
                     },
                 ]
@@ -243,8 +243,11 @@ let handlePostSurvey = async (req, res) => {
     let email = req.body.email;
     let phonenumber = req.body.phonenumber;
     let note = req.body.note;
+    let mother = req.body.mother;
+    let father = req.body.father;
+    let vaccinationstatus = req.body.vaccinationstatus;
 
-    await writeDataToGoogleSheet(name, country, email, phonenumber, note);
+    await writeDataToGoogleSheet(name, country, email, phonenumber, note, mother, father, vaccinationstatus);
 
     //send a text message
     await callSendAPI(psid, { text: `Done!\nYour information 's recorded!` });
@@ -259,7 +262,7 @@ let handlePostSurvey = async (req, res) => {
     })
 }
 
-let writeDataToGoogleSheet = async (name, country, email, phonenumber, note) => {
+let writeDataToGoogleSheet = async (name, country, email, phonenumber, note, mother, father, vaccinationstatus) => {
     return new Promise(async (resolve, reject) => {
         try {
             // Initialize the sheet - doc ID is the long id in the sheets URL
@@ -284,6 +287,9 @@ let writeDataToGoogleSheet = async (name, country, email, phonenumber, note) => 
                     'Country': country,
                     'Email': email,
                     'Phone number': phonenumber,
+                    'Mother': mother,
+                    'Father': father,
+                    'Vaccination Status': vaccinationstatus,
                     'Message': note
                 }
             );
