@@ -28,6 +28,8 @@ window.extAsyncInit = function () {
             country: document.getElementById("country").value,
             email: document.getElementById("email").value,
             phonenumber: document.getElementById("phonenumber").value,
+            motherphonenumber: document.getElementById("motherphonenumber").value,
+            fatherphonenumber: document.getElementById("fatherphonenumber").value,
             note: document.getElementById("note").value,
             mother: document.getElementById("mother").value,
             father: document.getElementById("father").value,
