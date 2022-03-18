@@ -29,6 +29,9 @@ window.extAsyncInit = function () {
             email: document.getElementById("email").value,
             phonenumber: document.getElementById("phonenumber").value,
             note: document.getElementById("note").value,
+            mother: document.getElementById("mother").value,
+            father: document.getElementById("father").value,
+            vaccinationstatus: document.getElementById("vaccinationstatus").value,
         }
 
         //send a request to node.js server
